@@ -21,12 +21,33 @@ We'll be using an existing application that uses the [PokeAPI](http://pokeapi.co
 #### Read the Code
 
 - After setup, **STOP**. You're using an existing application, so make sure to read the code and ensure what the application does. Answer these questions you may want to ask yourself:
+
   - How does the app retrieve a list of Pokemon?
+  KRISTI'S COMMENT
+ // The app retrieves the list of Pokemon from the API of 'http://pokeapi.co/api/v2/pokemon/', and then it is named as the variable pokemonUrl//
+
   - How many Pokemon does the API call retrieve? Why that many?
+  KRISTI'S COMMENT
+  // The pokemon API call retrieves 151 pokemon. The programmer used slice to take only 151 pokemon from the data array results we get from the API.//
+
+
   - What are the routes defined in the application?
+  KRISTI'S COMMENT
+  // 
+  1. Index/Home route has a list of pokemon with an option to favorite a pokemon/get route. 
+  2. A get route in the controller pokemon.js, that takes you the favorited pokemon page, shows the pokemons sent to the database you created.  
+  3. A post route that recieves the favorited pokemon and saves it to the database.
+  //
+
   - Think about adding a Pokemon to your favorites.
+
+
     - How will this data be submitted?
+    KRISTI'S COMMENT
+    // The data is submitted on the home page when the user click on the add to favorites button. The add to favorites button is linked to the index.ejs file which hold the form. 
+
     - What will you have to do to save this data to a database?
+    I have to create a db, 
     - What will you have to do to display favorite Pokemon?
 
 ## User Stories
@@ -82,16 +103,24 @@ You'll want to add functionality to the following routes by incorporating the `p
 - `GET /pokemon`
   - View: `views/pokemon/index.ejs`
   - Purpose: Retrieve all favorited Pokemon and display them on the page
-  - What sequelize function will do this for us?
+  - What sequelize function will do this for us? 
+
+  KRISTI'S COMMENT
+  // db.pokemon.findAll()//
 - `POST /pokemon`
   - The form for adding is already included on the main index page
   - View: none (redirect to `/pokemon`)
   - Purpose: Creates a new Pokemon and redirects back to `/pokemon`
   - What is the sequelize function we use here?
 
+  KRISTI'S COMMENT
+  // db.pokemon.create(req.body)//
+
 #### Part 4: Display more info on each Pokemon
 
 Add a route `GET /pokemon/:id` that renders a `show` page with information about the Pokemon with the corresponding row `id`.
+KRISTI'S COMMENT
+// This is achieved in my router.get(/:idx) route. To actually see the traits of a specific pokemon you have to go to localhost:3000/pokemon/1 or whatever number up to 151 to see each specific pokemon. I went to the array of response.data and picked diffrent data to display each trait. ///
 
 - You can get detailed information about a Pokemon by passing the Pokemon's name to PokeAPI. You can retrieve images, abilities, stats, and moves through the API.
 - Example: http://pokeapi.co/api/v2/pokemon/bulbasaur/
@@ -101,6 +130,9 @@ Check out the result of the pokemon API calls (or see the [doc page](http://poke
 #### Part 5: Styling
 
 When finished with the above, style the application more to your liking with CSS.
+
+KRISTI'S COMMENTS
+// I made my div smaller so that the don't take up the entire page. I also added a background image. //
 
 ## API Limits
 

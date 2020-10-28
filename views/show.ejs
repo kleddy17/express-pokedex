@@ -1,0 +1,27 @@
+
+<div class = "pokemon-traits">
+<h1><%= pokemonIndex.name %></h1>
+<br>
+<h2><img src="<%=pokemonIndex.sprites.other.dream_world.front_default%>" width="300"></h2>
+<br>
+<p> Type:
+<% pokemonIndex.types.forEach(type=>{%>
+    <br>    <%=type.type.name%> 
+<% }) %>
+</p>
+<p> Abilites:
+<% pokemonIndex.abilities.forEach(ability=>{%>
+      <br>   <%=ability.ability.name%>
+<% }) %>
+</p>
+<p> Moves: 
+<% pokemonIndex.moves.forEach(move=>{%>
+  <br>   <%=move.move.name%>    
+<% }) %>
+</p>
+<p> Stats:
+<% pokemonIndex.stats.forEach(stat=>{%>
+      <br>  <%=stat.stat.name%>
+<% }) %>
+</p>
+</div>
